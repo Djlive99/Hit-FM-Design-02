@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Dj-Live</title>
+<link rel="icon" type="image/ico" href="images/djlive.ico">
+</head>
+
+<body background="" link="#000" alink="#017bf5" vlink="#000">
+	
+	<h3 align="center">
+		<font face="Monotype Corsiva" color="green" size="5">THE HIT FM</font>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Monotype Corsiva" size="4">
+			<a href="#">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">Our Team</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">Our Djs</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#">Contact Us</a>
+		</font>
+	</h3>
+	<div id="metadata"> </div><br>
+<div align="center"><audio loop autoplay controls autobuffer>
+    <source src='https://stream.rcast.net/71089?djlive=type.mp3'>
+</audio>
+<div id="metadata"> </div><br>
+<section>
+<script type="text/javascript"> 
+//Specify the slider's width (in pixels)
+var sliderwidth="735px"
+//Specify the slider's height
+var sliderheight="155px"
+//Specify the slider's slide speed (larger is faster 1-10)
+var slidespeed=2
+//configure background color:
+slidebgcolor="#ffffff"
+
+//Specify the slider's images
+var leftrightslide=new Array()
+var finalslide=''
+
+leftrightslide[0]='<a href="#"><img src="https://image.ibb.co/hjstjf/270678278490708819650645224733968075038977n150x150.jpg" width="250" height="250" border=0></a>'
+
+leftrightslide[1]='<a href="#"><img src="https://image.ibb.co/djjTH0/17632080102030434197639154991258348311786731o150x150.jpg" width="250" height="250" border=0></a>'
+
+leftrightslide[2]='<a href="#"><img src="https://image.ibb.co/mwUHAL/248997823822320788932562531115122109962020n150x150.jpg" width="250" height="250" border=0></a>'
+
+leftrightslide[3]='<a href="#"><img src="https://image.ibb.co/fky5x0/x1080t-R150x150.jpg" width="250" height="250" border=0></a>'
+
+leftrightslide[4]='<a href="#"><img src="https://image.ibb.co/bxQJH0/1994461714906385376636204589498603205849608o150x150.jpg" width="250" height="250" border=0></a>'
+
+leftrightslide[5]='<a href="#"><img src="https://image.ibb.co/fG8SAL/399453571497932056974929122152331641880576o150x150.jpg" width="250" height="250" border=0></a>'
+
+
+
+
+//Specify gap between each image (use HTML):
+var imagegap=" "
+//Specify pixels gap between each slideshow rotation (use integer):
+var slideshowgap=5
+////NO NEED TO EDIT BELOW THIS LINE////////////
+var copyspeed=slidespeed
+leftrightslide='<nobr>'+leftrightslide.join(imagegap)+'</nobr>'
+var iedom=document.all||document.getElementById
+if (iedom)
+document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100px;left:-9000px">'+leftrightslide+'</span>')
+var actualwidth=''
+var cross_slide, ns_slide
+function fillup(){
+if (iedom){
+cross_slide=document.getElementById? document.getElementById("test2") : document.all.test2
+cross_slide2=document.getElementById? document.getElementById("test3") : document.all.test3
+cross_slide.innerHTML=cross_slide2.innerHTML=leftrightslide
+actualwidth=document.all? cross_slide.offsetWidth : document.getElementById("temp").offsetWidth
+cross_slide2.style.left=actualwidth+slideshowgap+"px"
+}
+else if (document.layers){
+ns_slide=document.ns_slidemenu.document.ns_slidemenu2
+ns_slide2=document.ns_slidemenu.document.ns_slidemenu3
+ns_slide.document.write(leftrightslide)
+ns_slide.document.close()
+actualwidth=ns_slide.document.width
+ns_slide2.left=actualwidth+slideshowgap
+ns_slide2.document.write(leftrightslide)
+ns_slide2.document.close()
+}
+lefttime=setInterval("slideleft()",30)
+}
+window.onload=fillup
+
+function slideleft(){
+if (iedom){
+if (parseInt(cross_slide.style.left)>(actualwidth*(-1)+8))
+cross_slide.style.left=parseInt(cross_slide.style.left)-copyspeed+"px"
+else
+cross_slide.style.left=parseInt(cross_slide2.style.left)+actualwidth+slideshowgap+"px"
+
+if (parseInt(cross_slide2.style.left)>(actualwidth*(-1)+8))
+cross_slide2.style.left=parseInt(cross_slide2.style.left)-copyspeed+"px"
+else
+cross_slide2.style.left=parseInt(cross_slide.style.left)+actualwidth+slideshowgap+"px"
+
+}
+else if (document.layers){
+if (ns_slide.left>(actualwidth*(-1)+8))
+ns_slide.left-=copyspeed
+else
+ns_slide.left=ns_slide2.left+actualwidth+slideshowgap
+
+if (ns_slide2.left>(actualwidth*(-1)+8))
+ns_slide2.left-=copyspeed
+else
+ns_slide2.left=ns_slide.left+actualwidth+slideshowgap
+}
+}
+if (iedom||document.layers){
+with (document){
+document.write('<table border="0" cellspacing="0" cellpadding="0"><td>')
+if (iedom){
+write('<div style="position:relative;width:'+sliderwidth+';height:'+sliderheight+';overflow:hidden">')
+write('<div style="position:absolute;width:'+sliderwidth+';height:'+sliderheight+';background-color:'+slidebgcolor+'" onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed">')
+write('<div id="test2" style="position:absolute;left:0px;top:0px"></div>')
+write('<div id="test3" style="position:absolute;left:-1000px;top:0px"></div>')
+write('</div></div>')
+}
+else if (document.layers){
+write('<ilayer width='+sliderwidth+' height='+sliderheight+' name="ns_slidemenu" bgColor='+slidebgcolor+'>')
+write('<layer name="ns_slidemenu2" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+write('<layer name="ns_slidemenu3" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+write('</ilayer>')
+}
+document.write('</td></table>')
+}
+}
+</script>
+
+</section>
+
+<div id="metadata"> </div><br>
+<br /><br />
+    
+<div align="center">
+        <pre></pre>
+        <a href="https://www.whatsapp.com" target="blank">
+            <img src="images/whatsapp.gif" alt="" width="50px">
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.facebook.com" target="blank">
+            <img src="images/facebook.gif" alt="" width="50px">
+        </a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.tiktok.com" target="blank">
+            <img src="images/tiktok.gif" alt="" width="50px">
+        </a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com" target="blank">
+            <img src="images/instagram.gif" alt="" width="50px">
+        </a>
+    <pre></pre>
+</div>
+<!...footer section...!>
+
+<div id=metadata> </div><br>
+<div align=center><footer>
+    <p>&copy; <span id="currentYear"></span> <a href='#'>THE HIT FM</a> All rights reserved.</p>
+</footer></div>
+
+<script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+</script>
+</body>
+</html>
